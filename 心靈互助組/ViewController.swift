@@ -52,8 +52,7 @@ class ViewController: UIViewController {
             alerttext = "您現在心情是不太開心,\n建議作心情溫度計(BSRS-5)自我評量!"
         case 5:
             alerttext = "您現在心情是難過,\n建議作心情溫度計(BSRS-5)自我評量!"
-        default:
-            alerttext = ""
+        default: break
         }
         let alert = UIAlertController(title: (alerttext), message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "同意", style: .default, handler: { (action) in
@@ -73,7 +72,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func call1(_ sender: UIButton) {
-        //makePhoneCall(phoneNumber: "+8869123")
+        Call1(VCc:self)
     }
     
 }

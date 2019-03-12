@@ -9,13 +9,6 @@
 import UIKit
 
 class BSRViewController: UIViewController {
-
-    var ansSum = 0
-    var ankx = 0
-    var anxk = 0
-    
-    var btnxy = Array(repeating: Array(repeating: 0, count: 5), count: 6)
-    var bsxk = Array(repeating: 0, count: 6)
     
     @IBOutlet weak var an10: UIButton!
     @IBOutlet weak var an11: UIButton!
@@ -43,190 +36,47 @@ class BSRViewController: UIViewController {
     @IBOutlet weak var an53: UIButton!
     @IBOutlet weak var an54: UIButton!
     
-    @IBOutlet var coAn1s: [UIButton]!
-    @IBOutlet var coAn2s: [UIButton]!
-    @IBOutlet var coAn3s: [UIButton]!
-    @IBOutlet var coAn4s: [UIButton]!
-    @IBOutlet var coAn5s: [UIButton]!
-    
+    var ansSum = 0
+    var xk = 0
+    var xkans:[Int] = [0,0,0,0,0,0]
+    var Btn:[[UIButton]] = []
+    var Btn00,Btn1k,Btn2k,Btn3k,Btn4k,Btn5k:[UIButton]!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        b10.addTarget(self, action: "buttonClicked:", for: .touchUpInside)
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    func Ans1() {
-        for coAn1 in coAn1s {
-            coAn1.isEnabled = true
-        }
-    }
-    
-    @IBAction func An10(_ sender: Any) {
-        Ans1()
-        an10.isEnabled = false
-    }
-    
-    
-    
-    @IBAction func An11(_ sender: Any) {
-        Ans1()
-        an11.isEnabled = false
-    }
-    @IBAction func An12(_ sender: Any) {
-        Ans1()
-        an12.isEnabled = false
-    }
-    @IBAction func An13(_ sender: Any) {
-        Ans1()
-        an13.isEnabled = false
-    }
-    @IBAction func An14(_ sender: Any) {
-        Ans1()
-        an14.isEnabled = false
-    }
-    
-    func Ans2() {
-        for coAn2 in coAn2s {
-            coAn2.isEnabled = true
-        }
-    }
-    
-    @IBAction func An20(_ sender: Any) {
-        Ans2()
-        an20.isEnabled = false
-    }
-    @IBAction func An21(_ sender: Any) {
-        Ans2()
-        an21.isEnabled = false
-    }
-    @IBAction func An22(_ sender: Any) {
-        Ans2()
-        an22.isEnabled = false
-    }
-    @IBAction func An23(_ sender: Any) {
-        Ans2()
-        an23.isEnabled = false
-    }
-    @IBAction func An24(_ sender: Any) {
-        Ans2()
-        an24.isEnabled = false
-    }
-    
-    func Ans3() {
-        for coAn3 in coAn3s {
-            coAn3.isEnabled = true
-        }
-    }
-    @IBAction func An30(_ sender: Any) {
-        Ans3()
-        an30.isEnabled = false
-    }
-    @IBAction func An31(_ sender: Any) {
-        Ans3()
-        an31.isEnabled = false
-    }
-    @IBAction func An32(_ sender: Any) {
-        Ans3()
-        an32.isEnabled = false
-    }
-    
-    @IBAction func An33(_ sender: Any) {
-        Ans3()
-        an33.isEnabled = false
-    }
-    @IBAction func An34(_ sender: Any) {
-        Ans3()
-        an34.isEnabled = false
-    }
-    
-    func Ans4() {
-        for coAn4 in coAn4s {
-            coAn4.isEnabled = true
-        }
-    }
-    
-    @IBAction func An40(_ sender: Any) {
-        Ans4()
-        an40.isEnabled = false
-    }
-    @IBAction func An41(_ sender: Any) {
-        Ans4()
-        an41.isEnabled = false
-    }
-    @IBAction func An42(_ sender: Any) {
-        Ans4()
-        an42.isEnabled = false
-    }
-    @IBAction func An43(_ sender: Any) {
-        Ans4()
-        an43.isEnabled = false
-    }
-    @IBAction func An44(_ sender: Any) {
-        Ans4()
-        an44.isEnabled = false
-    }
-    
-    func Ans5() {
-        for coAn5 in coAn5s {
-            coAn5.isEnabled = true
-        }
-    }
-    @IBAction func An50(_ sender: Any) {
-        Ans5()
-        an50.isEnabled = false
-    }
-    @IBAction func An51(_ sender: Any) {
-        Ans5()
-        an51.isEnabled = false
-    }
-    @IBAction func An52(_ sender: Any) {
-        Ans5()
-        an52.isEnabled = false
-    }
-    @IBAction func An53(_ sender: Any) {
-        Ans5()
-        an53.isEnabled = false
-    }
-    @IBAction func An54(_ sender: Any) {
-        Ans5()
-        an54.isEnabled = false
-    }
-    
-    func Count0(){
-        bsxk[anxk] = ankx
-        ansSum = bsxk[1]+bsxk[2]+bsxk[3]+bsxk[4]+bsxk[5]
-    }
-    
-    @IBAction func Anx0(_ sender: Any) {
-        ankx = 0
-        Count0()
-        
-    }
-    @IBAction func Anx1(_ sender: Any) {
-        ankx = 1
-        Count0()
+        Btn00 = []
+        Btn1k = [an10,an11,an12,an13,an14]
+        Btn2k = [an20,an21,an22,an23,an24]
+        Btn3k = [an30,an31,an32,an33,an34]
+        Btn4k = [an40,an41,an42,an43,an44]
+        Btn5k = [an50,an51,an52,an53,an54]
+        Btn = [Btn00,Btn1k,Btn2k,Btn3k,Btn4k,Btn5k]
     }
     
     @IBAction func An1x(_ sender: UIButton) {
-        anxk = 1
-        bsxk[1] = ankx
+        xk = 1
+        xkans[xk] = sender.tag
+        F0()
     }
     @IBAction func An2x(_ sender: UIButton) {
-        anxk = 2
-        bsxk[2] = ankx
+        xk = 2
+        xkans[xk] = sender.tag
+        F0()
     }
     @IBAction func An3x(_ sender: UIButton) {
-        anxk = 3
-        bsxk[3] = ankx
+        xk = 3
+        xkans[xk] = sender.tag
+        F0()
     }
     @IBAction func An4x(_ sender: UIButton) {
-        anxk = 4
-        bsxk[4] = ankx
+        xk = 4
+        xkans[xk] = sender.tag
+        F0()
     }
     @IBAction func An5x(_ sender: UIButton) {
-        anxk = 5
-        bsxk[5] = ankx
+        xk = 5
+        xkans[xk] = sender.tag
+        F0()
     }
     
     @IBAction func Done(_ sender: Any) {
@@ -258,11 +108,23 @@ class BSRViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
         
+    }  
+    
+    func F0(){
+        ansSum = xkans[1]+xkans[2]+xkans[3]+xkans[4]+xkans[5]
+        
+        for i in 0...4{
+            Btn[xk][i].isEnabled=true
+        }
+        Btn[xk][xkans[xk]].isEnabled = false
     }
     
     func Cancel0(){
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "BSRViewController") as! BSRViewController
-        self.present(vc, animated: false, completion: nil)
+    let vc = self.storyboard?.instantiateViewController(withIdentifier: "BSRViewController") as! BSRViewController
+    self.present(vc, animated: false, completion: nil)
     }
   
+    @IBAction func call1(_ sender: Any) {
+        Call1(VCc:self)
+    }
 }

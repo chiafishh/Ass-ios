@@ -13,7 +13,7 @@ class TopViewController: UIViewController {
  
     
     @IBAction func call1(_ sender: UIButton) {
-        makePhoneCall(ViewController:self,phoneNumber: "+886981839228")
+        Call1(VCc:self)
     }
     
     override var prefersStatusBarHidden: Bool{
@@ -28,21 +28,17 @@ class TopViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     
     
 
     
 }
 
+
+func Call1(VCc:UIViewController){
+    makePhoneCall(ViewController:VCc,phoneNumber: "+886981839228")
+}
 
 func makePhoneCall(ViewController:UIViewController,phoneNumber: String) {
     if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
@@ -56,3 +52,5 @@ func makePhoneCall(ViewController:UIViewController,phoneNumber: String) {
         ViewController.present(alert, animated: true, completion: nil)
     }
 }
+
+
