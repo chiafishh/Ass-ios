@@ -87,7 +87,7 @@ class BSRViewController: UIViewController {
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "SouViewController") as! SouViewController
                     self.present(vc, animated: true, completion: nil)
             }))
-            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: { (action) in self.Cancel0() }))
+            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else if(ansSum < 15)
@@ -96,7 +96,7 @@ class BSRViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "撥打", style: .default, handler: { (action) in
                 makePhoneCall(ViewController:self,phoneNumber: "+886981839228")
             }))
-            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: { (action) in self.Cancel0() }))
+            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else{
@@ -104,7 +104,7 @@ class BSRViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "撥打", style: .default, handler: { (action) in
                 makePhoneCall(ViewController:self,phoneNumber: "+886981839228")
             }))
-            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: { (action) in self.Cancel0() }))
+            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         
@@ -119,10 +119,10 @@ class BSRViewController: UIViewController {
         Btn[xk][xkans[xk]].isEnabled = false
     }
     
-    func Cancel0(){
+    /*func Cancel0(){
     let vc = self.storyboard?.instantiateViewController(withIdentifier: "BSRViewController") as! BSRViewController
     self.present(vc, animated: false, completion: nil)
-    }
+    }*/
   
     @IBAction func call1(_ sender: Any) {
         Call1(VCc:self)

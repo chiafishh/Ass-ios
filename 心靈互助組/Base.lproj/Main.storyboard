@@ -531,7 +531,6 @@
         <!--View Controller-->
         <scene sceneID="eZ4-C4-S4B">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cSW-7e-abf" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="BSRViewController" id="i4h-ec-j8g" customClass="BSRViewController" customModule="心靈互助組" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M4u-8q-nWo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -935,6 +934,7 @@
                         <outlet property="an54" destination="q47-VU-ib5" id="z1Y-dR-2Iv"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cSW-7e-abf" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1520.8" y="26.600985221674879"/>
         </scene>
@@ -1000,7 +1000,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pJE-0n-Joy"/>
-        <segue reference="a5Q-I2-s1C"/>
-        <segue reference="pMs-ef-ebn"/>
+        <segue reference="uCx-MG-mXQ"/>
+        <segue reference="anF-iH-VEK"/>
     </inferredMetricsTieBreakers>
 </document>
