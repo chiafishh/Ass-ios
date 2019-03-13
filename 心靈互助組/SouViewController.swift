@@ -9,14 +9,14 @@
 import UIKit
 
 class SouViewController: UIViewController {
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-    
+
 
     @IBAction func call1(_ sender: Any) {
         Call1(VCc:self)

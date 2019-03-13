@@ -18,6 +18,7 @@
 		55D770A8221D0D130078F89D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D770A6221D0D130078F89D /* Main.storyboard */; };
 		55D770AA221D0D140078F89D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D770A9221D0D140078F89D /* Assets.xcassets */; };
 		55D770AD221D0D140078F89D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D770AB221D0D140078F89D /* LaunchScreen.storyboard */; };
+		59FCA36C22392114009EE73B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FCA36B22392114009EE73B /* TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		55D770A9221D0D140078F89D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55D770AC221D0D140078F89D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55D770AE221D0D140078F89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59FCA36B22392114009EE73B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				55D770A9221D0D140078F89D /* Assets.xcassets */,
 				55D770AB221D0D140078F89D /* LaunchScreen.storyboard */,
 				55D770AE221D0D140078F89D /* Info.plist */,
+				59FCA36B22392114009EE73B /* TableView.swift */,
 			);
 			path = "心靈互助組";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				53C7177B223282BF00836717 /* PDFViewController.swift in Sources */,
 				55D770A3221D0D130078F89D /* AppDelegate.swift in Sources */,
 				55C53A22221E755500BAE6DE /* SouViewController.swift in Sources */,
+				59FCA36C22392114009EE73B /* TableView.swift in Sources */,
 				53C7177722327E3900836717 /* WebpdfViewController.swift in Sources */,
 				55C53A2C221E763800BAE6DE /* TopViewController.swift in Sources */,
 			);
