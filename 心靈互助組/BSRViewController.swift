@@ -41,6 +41,7 @@ class BSRViewController: UIViewController {
     var xkans:[Int] = [0,0,0,0,0,0]
     var Btn:[[UIButton]] = []
     var Btn00,Btn1k,Btn2k,Btn3k,Btn4k,Btn5k:[UIButton]!
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,28 +84,32 @@ class BSRViewController: UIViewController {
         if(ansSum < 10)
         {
             let alert = UIAlertController(title: nil, message: ("您的結果為\(ansSum)分，\n建議參訪相關資源"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "取消", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "參訪相關資源", style: .default, handler: { (action) in
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "SouViewController") as! SouViewController
                     self.present(vc, animated: true, completion: nil)
             }))
-            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else if(ansSum < 15)
         {
             let alert = UIAlertController(title: nil, message: ("您的結果為\(ansSum)分，\n建議撥打自殺防治專線\n或尋找相關資源!"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "取消", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "撥打", style: .default, handler: { (action) in
-                makePhoneCall(ViewController:self,phoneNumber: "+886981839228")
+                if let phoneURL = NSURL(string: ("tel://" + "+886800788995")){
+                    UIApplication.shared.open(phoneURL as URL)
+                }
             }))
-            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else{
             let alert = UIAlertController(title: nil, message: ("您的結果為\(ansSum)分，\n請撥打自殺防治專線!"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "取消", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "撥打", style: .default, handler: { (action) in
-                makePhoneCall(ViewController:self,phoneNumber: "+886981839228")
+                if let phoneURL = NSURL(string: ("tel://" + "+886800788995")){
+                UIApplication.shared.open(phoneURL as URL)
+                }
             }))
-            alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         
@@ -118,13 +123,9 @@ class BSRViewController: UIViewController {
         }
         Btn[xk][xkans[xk]].isEnabled = false
     }
-    
-    /*func Cancel0(){
-    let vc = self.storyboard?.instantiateViewController(withIdentifier: "BSRViewController") as! BSRViewController
-    self.present(vc, animated: false, completion: nil)
-    }*/
   
     @IBAction func call1(_ sender: Any) {
         Call1(VCc:self)
     }
 }
+

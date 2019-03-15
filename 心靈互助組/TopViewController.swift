@@ -37,17 +37,18 @@ class TopViewController: UIViewController {
 
 
 func Call1(VCc:UIViewController){
-    makePhoneCall(ViewController:VCc,phoneNumber: "+886981839228")
+    makePhoneCall(ViewController:VCc,phoneNumber: "+886800788995")
 }
 
 func makePhoneCall(ViewController:UIViewController,phoneNumber: String) {
     if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
         let alert = UIAlertController(title: ("撥打電話"), message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "取消", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "撥打", style: .default, handler: { (action) in
             UIApplication.shared.open(phoneURL as URL)
         }))
         
-        alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        
         
         ViewController.present(alert, animated: true, completion: nil)
     }

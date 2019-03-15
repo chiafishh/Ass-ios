@@ -12,10 +12,12 @@ class ViewController: UIViewController {
     
     var en = 0
     var alerttext = "1"
+    @IBOutlet var but: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        but.imageView?.contentMode = .scaleAspectFit
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -55,6 +57,7 @@ class ViewController: UIViewController {
         default: break
         }
         let alert = UIAlertController(title: (alerttext), message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "取消", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "同意", style: .default, handler: { (action) in
             if self.en <= 3 {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "SouViewController") as! SouViewController
@@ -65,8 +68,6 @@ class ViewController: UIViewController {
                 self.present(vc, animated: true, completion: nil)
             }
         }))
-        
-        alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
     }
